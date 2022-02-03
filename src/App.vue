@@ -1,10 +1,16 @@
 <template>
 	<v-app>
 		<v-app-bar color="teal" app>
-			<v-toolbar-title class="ml-2 white--text"> Expense Tracker </v-toolbar-title>
+			<a href="#"
+				><v-toolbar-title class="ml-2 white--text">
+					Expense Tracker
+				</v-toolbar-title></a
+			>
 		</v-app-bar>
 
-		<v-content class="text-center ma-6"> <Main /> </v-content>
+		<v-content class="text-center ma-6">
+			<Main />
+		</v-content>
 	</v-app>
 </template>
 
@@ -15,9 +21,15 @@ export default {
 	name: "App",
 
 	components: {
-    Main,
+		Main,
 	},
 
 	data: () => ({}),
 };
 </script>
+
+<style scoped>
+#total {
+	float: right;
+}
+</style>

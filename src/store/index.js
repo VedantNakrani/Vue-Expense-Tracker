@@ -7,7 +7,7 @@ export default new Vuex.Store({
     state: {
         amount: null,
         expenses: [],
-        values: [1,2,3]
+        values: []
     },
     mutations: {
         ADD_EXPENSE: (state, expensesPayload) => {

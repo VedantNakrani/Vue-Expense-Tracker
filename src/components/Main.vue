@@ -1,5 +1,8 @@
 <template>
 	<div>
+		<v-container class="teal">
+			Total Expenses: ₹{{ expenseValue }}
+		</v-container>
 		<div class="form">
 			<form @submit.prevent="addDetails" class="form-inline">
 				<label for="name">Expense Name:</label>
@@ -46,8 +49,10 @@
 						<td class="text-left">{{ expense.name }}</td>
 						<td class="text-left">{{ expense.value }}</td>
 						<td class="text-left">{{ expense.date }}</td>
-						<td class="text-left red" @click="deleteContent(expense)">
-							Delete
+						<td>
+							<v-btn class="text-left red" @click="deleteContent(expense)">
+								Delete
+							</v-btn>
 						</td>
 					</tr>
 				</tbody>
@@ -57,7 +62,7 @@
 </template>
 
 <script>
-import { mapActions, mapMutations, mapState } from "vuex";
+import { mapActions, mapMutations, mapState, mapGetters } from "vuex";
 
 export default {
 	name: "Main",
@@ -70,6 +75,7 @@ export default {
 	},
 	computed: {
 		...mapState(["expenses"]),
+		...mapGetters(["expenseValue"]),
 	},
 	methods: {
 		...mapMutations(["ADD_EXPENSE", "ADD_VALUE"]),
