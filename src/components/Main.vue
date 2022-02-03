@@ -74,8 +74,8 @@ export default {
 		};
 	},
 	computed: {
-		...mapState(["expenses"]),
 		...mapGetters(["expenseValue"]),
+		...mapState(["expenses"]),
 	},
 	methods: {
 		...mapMutations(["ADD_EXPENSE", "ADD_VALUE"]),
@@ -97,7 +97,6 @@ export default {
 			this.removeExpense(expense);
 		},
 	},
-	components: {},
 };
 </script>
 
